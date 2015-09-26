@@ -17,7 +17,7 @@ The data is created from the original data by the following process.
     4. Replace a single close bracket with nothing: `) -> `; and
     5. Replace a single open bracket with an underscore: `( -> _`.
 * After renaming the columns, we read in the data and set the column names.  The data is read in with `train/X_train.txt` stacked on top of `test/X_test.txt`.
-* We then subset this data by removing the columns we're not interested in.  The only columns we want to keep here are the ones that end in `-mean()` or `-std()` which correspond to the mean and standard deviation of each variable.  NOTE: This corresponds to the **original** names before the replacements were made above.
+* We then subset this data by removing the columns we're not interested in.  The only columns we want to keep here are the ones that contain `-mean()` or `-std()` which correspond to the mean and standard deviation of each variable.  NOTE: This corresponds to the **original** names before the replacements were made above.
 * The activity and subject data is then read in, these are found in the `y_*.txt` and `subject_*.txt` files respectively.  These are read in in the same `train` stacked on top of `test` order as before.
 * We re-name the `activity` data, which is just numbers, using the names found in `activity_labels.txt`.
 * These are then added to the main data, by appending the columns on the left.  The column ordering is now `Subject`, `Activity`,...
